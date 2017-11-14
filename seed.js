@@ -1,6 +1,6 @@
 const { MongoClient } = require('mongodb')
 
-MongoClient.connect('mongodb://localhost/clock', (error, db) => {
+MongoClient.connect('mongodb://localhost/reactclock', (error, db) => {
   const timezones = db.collection('times')
   timezones
     .find({})
@@ -17,9 +17,11 @@ MongoClient.connect('mongodb://localhost/clock', (error, db) => {
                 'America/Sao_Paulo',
                 'America/New_York',
                 'America/Chicago',
-                'America/Denver',
+                'America/Los_Angeles',
                 'Pacific/Guam'
-              ].map(zone => ({zone: zone})))
+              ].map(zone => ({ zone: zone }))
+            )
+            .then(console.log('seeded'))
             .then(() => db.close())
             .catch(error => console.error(error))
         : db.close()

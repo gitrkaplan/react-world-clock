@@ -1,7 +1,7 @@
 const express = require('express')
 const { MongoClient } = require('mongodb')
 const moment = require('moment')
-const url = 'mongodb://localhost/clock'
+const url = 'mongodb://localhost/reactclock'
 const app = express()
 
 MongoClient.connect(url, (err, db) => {
@@ -11,7 +11,7 @@ MongoClient.connect(url, (err, db) => {
   app.use(express.static('./server/public'))
   const times = db.collection('times')
 
-  app.get('/clock/times', (req, res) => {
+  app.get('/reactclock/times', (req, res) => {
     times
       .find()
       .toArray()

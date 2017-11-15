@@ -4,10 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "bundle":
-      "browserify client/index.js -t babelify -o server/public/bundle.js",
-    "bundle:watch":
-      "watchify client/index.js -vd -t babelify -o server/public/bundle.js",
+    "bundle": "browserify client/index.js -t babelify -o server/public/bundle.js",
+    "bundle:watch": "watchify client/index.js -vd -t babelify -o server/public/bundle.js",
     "start": "nodemon server/app.js",
     "watch": "npm-run-all --parallel start bundle:watch",
     "seed": "node seed.js"
@@ -31,13 +29,12 @@
     "babelify": "8.0.0",
     "browserify": "14.5.0",
     "express": "^4.16.2",
+    "moment": "^2.19.1",
+    "moment-timezone": "^0.5.14",
+    "mongodb": "^2.2.33",
+    "nodemon": "^1.12.1",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
-    "watchify": "3.9.0",
-    "express": "^4.16.2",
-    "moment": "^2.19.1",
-    "moment-timezone": "^0.5.13",
-    "mongodb": "^2.2.33",
-    "nodemon": "^1.12.1"
+    "watchify": "3.9.0"
   }
 }
